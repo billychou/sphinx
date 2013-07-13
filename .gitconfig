@@ -1,0 +1,21 @@
+[alias]
+		lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s '
+		co = checkout
+		ci = commit
+		st = status
+		br = branch
+		sb = submodule
+
+[user]
+   name = huahu
+   email = action0324@gmail.com
+[core]
+    excludesfile = ~/.gitignore
+[color]
+	diff = auto  
+	status = auto
+	branch = auto
+	interactive = auto
+	ui = true
+	pager = true
+
