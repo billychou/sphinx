@@ -1,6 +1,7 @@
+#-*- coding:utf-8 -*-
 from django.conf.urls import patterns, include, url
+from note.models import Notepad
 
-# Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
 
@@ -16,4 +17,12 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^index/$', 'note.views.index'),
     url(r'^$', 'note.views.index'),
+    )
+
+    
+alist = Notepad.objects.all()  #从数据库里面读取basicstr
+for i in alist:
+    urlpatterns += patterns('',
+        url('(^%s$)'%i.basicStr, 'note.views.noteprocess'),
+            
     )
