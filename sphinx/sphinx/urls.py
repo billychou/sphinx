@@ -19,10 +19,12 @@ urlpatterns = patterns('',
     url(r'^$', 'note.views.index'),
     )
 
+
     
 alist = Notepad.objects.all()  #从数据库里面读取basicstr
 for i in alist:
     urlpatterns += patterns('',
-        url('(^%s$)'%i.basicStr, 'note.views.noteprocess'),
-            
+        url(r'^(%s)$'%i.basicStr, 'note.views.noteprocess'),
     )
+
+

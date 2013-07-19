@@ -2,7 +2,6 @@
 from note.models import Notepad
 from django import forms
 
-class NotepadForm(forms.ModelForm):
-    class Meta:
-        model = Notepad
-        fields = ('text',)
+class NotepadForm(forms.Form):
+    text = forms.TextField(label="Text")
+
