@@ -35,18 +35,14 @@ def index(request):
     baStr = generateStr()
     shStr = generateStr()
     #实现数据库里面保存把生成的字符串保存 
-    if request.method == "POST":
-        noteform = NotepadForm(request.POST)
-        if noteform.is_valid:
-            mytext = noteform.clean_data['text']   
-            t1 = Notepad(basicStr = baStr, shareStr = shStr, text = mytext)
-            t1.save()
+    t1 = Notepad(basicStr = baStr, shareStr = shStr, text = "")
+    t1.save()
     #print t1    
     return HttpResponseRedirect('/%s'%baStr) 
 
-def noteprocess(req, basic):
+def noteprocess(request, basic):
     """
-        
+        process function.    
     """
     if request.method == "POST":
         noteform = NotepadForm(request.POST)

@@ -15,16 +15,18 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^index/$', 'note.views.index'),
+    #url(r'^index/$', 'note.views.index'),
     url(r'^$', 'note.views.index'),
     )
 
 
     
-alist = Notepad.objects.all()  #从数据库里面读取basicstr
-for i in alist:
-    urlpatterns += patterns('',
-        url(r'^(%s)$'%i.basicStr, 'note.views.noteprocess'),
-    )
+#alist = Notepad.objects.all()  #从数据库里面读取basicstr
+#for i in alist:
+#    urlpatterns += patterns('',
+#        url(r'^(%s)$'%i.basicStr, 'note.views.noteprocess'),
+#    )
 
-
+urlpatterns += patterns('',
+    url(r'^(\w{6,12})$', 'note.views.noteprocess'),
+)

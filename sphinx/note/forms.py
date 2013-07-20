@@ -3,5 +3,5 @@ from note.models import Notepad
 from django import forms
 
 class NotepadForm(forms.Form):
-    text = forms.TextField(label="Text")
+    text = forms.CharField(label="Text")
 
