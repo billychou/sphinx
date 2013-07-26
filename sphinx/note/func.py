@@ -2,7 +2,7 @@
 
 import string 
 import random 
-def generateStr():
+def generatestr():
     """ 
         Func: generateStr
         Usage:

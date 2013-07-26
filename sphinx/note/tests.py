@@ -6,16 +6,16 @@
 
 from django.test import TestCase
 
-from note.models import Notepad
+from note.models import notepad
 from django.test.client import Client
 
 
 
-class NotepadTestCase(TestCase):
+class notepadtestcase(TestCase):
     """
         A simple test Notepad
     """
-    def setUp(self):
+    def setup(self):
         Notepad.objects.create(basicStr="hello", shareStr="world", text="helloworld")
         Notepad.objects.create(basicStr="linuxworld", shareStr="Abckdd12", text="welcome to my world. this is excellent. Very good!")
     
@@ -23,8 +23,8 @@ class NotepadTestCase(TestCase):
         """
             test if the notepad text is created or not
         """
-        myhello = Notepad.objects.get(basicStr="hello")
-        mylinuxworld = Notepad.objects.get(basicStr="linuxworld")
+        myhello = notepad.objects.get(basicStr="hello")
+        mylinuxworld = notepad.objects.get(basicStr="linuxworld")
     
         self.assertEqual(myhello.text, "helloworld")
         self.assertEqual(mylinuxworld.text, "welcome to my world. this is excellent. Very good!")
@@ -33,8 +33,8 @@ class NotepadTestCase(TestCase):
     def test_notepad_can_create_sharestr(self):
         """test if the notepad sharestr is created or not            
         """
-        self.assertEqual(Notepad.objects.get(basicStr="hello").shareStr, "world")
-        self.assertEqual(Notepad.objects.get(basicStr="linuxworld").shareStr, "Abckdd12") 
+        self.assertEqual(notepad.objects.get(basicStr="hello").shareStr, "world")
+        self.assertEqual(notepad.objects.get(basicStr="linuxworld").shareStr, "Abckdd12")
 
 
 
