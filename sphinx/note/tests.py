@@ -11,7 +11,7 @@ class NotepadTestCase(TestCase):
     """
         A simple test Notepad
     """
-    def setup(self):
+    def setUp(self):
         Notepad.objects.create(basicstr="hello", sharestr="world", text="helloworld")
         Notepad.objects.create(basicstr="linuxworld", sharestr="Abckdd12", text="welcome to my world. this is excellent. Very good!")
     
