@@ -16,8 +16,8 @@ class notepadtestcase(TestCase):
         A simple test Notepad
     """
     def setup(self):
-        Notepad.objects.create(basicStr="hello", shareStr="world", text="helloworld")
-        Notepad.objects.create(basicStr="linuxworld", shareStr="Abckdd12", text="welcome to my world. this is excellent. Very good!")
+        notepad.objects.create(basicStr="hello", shareStr="world", text="helloworld")
+        notepad.objects.create(basicStr="linuxworld", shareStr="Abckdd12", text="welcome to my world. this is excellent. Very good!")
     
     def test_notepad_can_create_text(self):
         """

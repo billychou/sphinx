@@ -13,7 +13,7 @@ def index(request):
     bastr = generatestr()
     shstr = generatestr()
     #实现数据库里面保存把生成的字符串保存 
-    t1 = notepad(basicStr = bastr, shareStr = shstr, text = "")
+    t1 = notepad(basicStr=bastr, shareStr=shstr, text="")
     t1.save()
     return redirect('/%s' % bastr) 
 
@@ -25,11 +25,11 @@ def noteprocess(request, basic):
         noteform = notepadform(request.POST)
         if noteform.is_valid():
             mytext = noteform.cleaned_data['text']   
-            t1=Notepad.objects.get(basicStr=basic)
+            t1=notepad.objects.get(basicStr=basic)
             t1.text = mytext 
             t1.save()
     else:
         noteform = notepadform()
-    mynotepad = notepad.objects.get(basicStr = basic)
+    mynotepad = notepad.objects.get(basicStr=basic)
     return render(request, 'noteprocess.html',{'noteform':noteform,'mynotepad':mynotepad })
 

@@ -1,5 +1,5 @@
 #-*- coding:utf-8 -*-
-from note.models import Notepad
+from note.models import notepad
 from django import forms
 
 class notepadform(forms.Form):
