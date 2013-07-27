@@ -9,4 +9,4 @@ install:
     pip install -r pip-req.txt --use-mirrors
 
 script:
-    - python ./sphinx/manage.py test status.SimpleTest
+    - python ./sphinx/manage.py test
