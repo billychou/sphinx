@@ -7,4 +7,4 @@ env:
 
 
 script:
-    - python manage.py test status.SimpleTest
+    - python ./manage.py test status.SimpleTest
