@@ -24,9 +24,13 @@ def noteprocess(request, basic):
     if request.method == "POST":
         noteform = NotepadForm(request.POST)
         if noteform.is_valid():
-            mytext = noteform.clean_data['text']   
-            t1 = Notepad(basicStr = baStr, shareStr = shStr, text = mytext)
+            mytext = noteform.cleaned_data['text']   
+            #Get the form data,from form 
+            t1=Notepad.objects.get(basicStr=basic)
+            #save the content to the database
+            t1.text = mytext 
             t1.save()
+            #Later we need to refactoring. 
     else:
         noteform = NotepadForm()    
     mynotepad = Notepad.objects.get(basicStr = basic)
