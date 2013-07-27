@@ -1,0 +1,12 @@
+language: python
+python:
+    -2.7
+
+env:
+    -DJANGO=Django==1.5.1 SOUTH=1
+
+install:
+
+
+script:
+    -python manage.py test
