@@ -10,12 +10,12 @@ def index(request):
     """  Define the index request.      
         当没有输入内容的时候，随即生成的字符串url保存到数据库里面
     """
-    baStr = generateStr()
-    shStr = generateStr()
+    bastr = generateStr()
+    shstr = generateStr()
     #实现数据库里面保存把生成的字符串保存 
-    t1 = Notepad(basicStr = baStr, shareStr = shStr, text = "")
+    t1 = Notepad(basicStr = bastr, shareStr = shstr, text = "")
     t1.save()
-    return redirect('/%s' % baStr) 
+    return redirect('/%s' % bastr) 
 
 def noteprocess(request, basic):
     """
@@ -25,12 +25,9 @@ def noteprocess(request, basic):
         noteform = NotepadForm(request.POST)
         if noteform.is_valid():
             mytext = noteform.cleaned_data['text']   
-            #Get the form data,from form 
             t1=Notepad.objects.get(basicStr=basic)
-            #save the content to the database
             t1.text = mytext 
             t1.save()
-            #Later we need to refactoring. 
     else:
         noteform = NotepadForm()    
     mynotepad = Notepad.objects.get(basicStr = basic)
