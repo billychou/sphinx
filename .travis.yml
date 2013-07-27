@@ -6,8 +6,7 @@ env:
     - DJANGO=Django==1.5.1 SOUTH=1
 
 install:
-    -pip install -r pip-req.txt --use-mirrors
-
+    pip install -r pip-req.txt --use-mirrors
 
 script:
     - python ./sphinx/manage.py test status.SimpleTest
