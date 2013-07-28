@@ -13,7 +13,7 @@ from django.test.client import Client
 
 class NotepadTestCase(TestCase):
     """
-        Test Notepad
+        A simple test Notepad
     """
     def setUp(self):
         Notepad.objects.create(basicStr="hello", shareStr="world", text="helloworld")
@@ -35,7 +35,6 @@ class NotepadTestCase(TestCase):
         """
         self.assertEqual(Notepad.objects.get(basicStr="hello").shareStr, "world")
         self.assertEqual(Notepad.objects.get(basicStr="linuxworld").shareStr, "Abckdd12") 
-
 
 
 
