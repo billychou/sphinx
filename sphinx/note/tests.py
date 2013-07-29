@@ -21,6 +21,7 @@ class NotepadTestCase(TestCase):
         """
         myhello = Notepad.objects.get(basicstr="hello")
         mylinuxworld = Notepad.objects.get(basicstr="linuxworld")
+
         self.assertEqual(myhello.text, "helloworld")
         self.assertEqual(mylinuxworld.text, "welcome to my world. this is excellent. Very good!")
 
