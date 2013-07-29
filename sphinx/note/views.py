@@ -3,11 +3,7 @@ from django.shortcuts  import redirect
 from django.shortcuts import render
 from note.models import Notepad
 from note.forms import NotepadForm
-<<<<<<< HEAD
-from note.utils import generateStr
-=======
-from note.func import generatestr
->>>>>>> f04b899b9ef74c6317ef4d8e778cc52120f68dbf
+from note.utils import generatestr
 
 
 def index(request):
@@ -17,11 +13,8 @@ def index(request):
     bastr = generatestr()
     shstr = generatestr()
     #实现数据库里面保存把生成的字符串保存 
-<<<<<<< HEAD
-    t1 = Notepad(basicstr=bastr, shareStr=shstr, text="")
-=======
     t1 = Notepad(basicstr=bastr, sharestr=shstr, text="")
->>>>>>> f04b899b9ef74c6317ef4d8e778cc52120f68dbf
+    t1 = Notepad(basicstr=bastr, sharestr=shstr, text="")
     t1.save()
     return redirect('/%s' %bastr)
 
