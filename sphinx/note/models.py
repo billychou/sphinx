@@ -10,8 +10,5 @@ class Notepad(models.Model):
     pub_time = models.DateTimeField(auto_now=True, auto_now_add=True)
     mod_time = models.DateTimeField(auto_now=True, auto_now_add=True)
     
-    pub_time = models.DateTimeField(auto_now=True, auto_now_add=True)
-    mod_time = models.DateTimeField(auto_now=True, auto_now_add=True)
-
     def __unicode__(self):
         return self.basicstr

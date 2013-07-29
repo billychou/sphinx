@@ -1,7 +1,7 @@
 #-*- coding:utf-8 -*-
-
 import string 
 import random 
+
 def generatestr():
     """ 
         Func: generateStr
