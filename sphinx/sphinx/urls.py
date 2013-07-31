@@ -1,8 +1,7 @@
 #-*- coding:utf-8 -*-
 from django.conf.urls import patterns, include, url
-from note.models import Notepad
-
 from django.contrib import admin
+
 admin.autodiscover()
 
 urlpatterns = patterns('',
