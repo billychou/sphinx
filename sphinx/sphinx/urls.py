@@ -21,4 +21,5 @@ urlpatterns = patterns('',
 
 urlpatterns += patterns('',
     url(r'^(\w{6,12})$', 'note.views.noteprocess'),
+    url(r'^share/(\w{6,12})$', 'note.views.shareprocess'),
 )

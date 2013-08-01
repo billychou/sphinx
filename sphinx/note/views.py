@@ -35,3 +35,9 @@ def noteprocess(request, basic):
     mynotepad = Notepad.objects.get(basicstr=basic)
     return render(request, 'noteprocess.html',{'noteform':noteform,'mynotepad':mynotepad})
 
+def shareprocess(request, share):
+    """
+        share address
+    """
+    mytext = Notepad.objects.get(sharestr=share)
+    return render(request, 'shareprocess.html', {'mytext':mytext})
