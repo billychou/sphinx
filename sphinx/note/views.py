@@ -29,7 +29,6 @@ def noteprocess(request, basic):
             t1 = Notepad.objects.get(basicstr=basic)
             t1.text = mytext 
             t1.save()
-            return redirect('/%s' % basic)
     else:
         noteform = NotepadForm()
     mynotepad = Notepad.objects.get(basicstr=basic)
