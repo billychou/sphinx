@@ -2,10 +2,12 @@
 
 {% block main %}
     <form method="POST">
-        <!--  <textarea name="content" style="width:100%; height:300px;">   </textarea>     <br /> -->
-        {{ noteform.text }}  {% csrf_token %}  <br />
-        <button type="submit" class="btn btn-success">Submit</button>  <br />
-        
+        <textarea type="text" name="myform" style="width:100%;height:30em"> </textarea>  
+        {%csrf_token%}    
+      
+     <button type="submit" class="btn btn-success">Submit</button> 
     </form>
-    <a href="/share/{{mynotepad.sharestr}}"><button type="text" class="btn btn-success">分享</button></a>
+    <a href="/share/{{mynotepad.sharestr}}">
+        <button type="text" class="btn btn-success">分享</button>
+    </a>
 {% endblock %}
