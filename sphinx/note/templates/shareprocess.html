@@ -2,5 +2,10 @@
 
 
 {% block main %}
-    {{mytext.text}}
+    {% if mytext.text %}  <br />
+        {{ mytext.text }}
+    {% else %}
+        <p>Can't find the content!</p>
+    {% endif %}
+    {{current_url}}
 {% endblock %}

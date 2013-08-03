@@ -23,20 +23,19 @@ def noteprocess(request, basic):
         process function.    
     """
     if request.method == "POST":
-        noteform = NotepadForm(request.POST)
-        if noteform.is_valid():
-            mytext = noteform.cleaned_data['text']   
-            t1 = Notepad.objects.get(basicstr=basic)
-            t1.text = mytext 
-            t1.save()
+        mytext = request.POST.get('myform', '')
     else:
-        noteform = NotepadForm()
+        mytext = request.GET.get('myform', '')
     mynotepad = Notepad.objects.get(basicstr=basic)
-    return render(request, 'noteprocess.html',{'noteform':noteform,'mynotepad':mynotepad})
+    mynotepad.text = mytext 
+    mynotepad.save()
+     
+    return render(request, 'noteprocess.html', {'mynotepad':mynotepad})
 
 def shareprocess(request, share):
     """
         share address
     """
     mytext = Notepad.objects.get(sharestr=share)
-    return render(request, 'shareprocess.html', {'mytext':mytext})
+    current_url = request.path
+    return render(request, 'shareprocess.html', {'mytext':mytext, 'current_url':current_url})
