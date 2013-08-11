@@ -1,11 +1,27 @@
 {% extends 'base.html' %}
 
+{% block extendjs %}
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"> </script>
+    <script>
+       //alert("test");
+       $("#target").keypress(function(){
+            //alert("hello");
+            $.ajax({
+                type: "POST",
+                data: $('#mform').serialize(),
+                async:false,
+                error:function(request){
+                       alert("Connection error!");
+                    }
+            });
+       }); 
+    </script>
+{% endblock %}
+
 {% block main %}
-    <form method="POST">
-        <textarea type="text" name="myform" style="width:100%;height:30em"> </textarea>  
+    <form id="mform" method="POST" name="textform">
+        <textarea id="target" type="text" name="myform" style="width:100%;height:30em"> </textarea>  
         {%csrf_token%}    
-      
-     <button type="submit" class="btn btn-success">Submit</button> 
     </form>
     <a href="/share/{{mynotepad.sharestr}}">
         <button type="text" class="btn btn-success">分享</button>
