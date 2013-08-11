@@ -1,8 +1,10 @@
-#项目sphinx
+#sphinx
 ==
 
 ##概述
-
-## Group Members
+项目会自动给你分配一个网址，你可以输入文本，会自动保存，可以用来方便的随手记录东西并分享
+##哪些技术
+主要是对Django的Class-Base View的一个实践。主要是项目开发流程，git的使用的一个演练。主要由
+Django 1.5.1、Python 2.7.3实现。
 
 

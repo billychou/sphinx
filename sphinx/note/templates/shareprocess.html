@@ -2,9 +2,11 @@
 
 {% block main %}
     {% if mytext.text %}  <br />
-        {{ mytext.text }}
+        {% load markup %}
+        {{ mytext.text|markdown:"safe" }}
     {% else %}
         <p>Can't find the content!</p>
     {% endif %}
-    {{current_url}}
+    <br />
+    <h3>分享地址为</h3>{{current_url}}
 {% endblock %}
