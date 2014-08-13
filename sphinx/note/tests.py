@@ -32,10 +32,3 @@ class NotepadTestCase(TestCase):
         self.assertEqual(Notepad.objects.get(basicstr="hello").sharestr, "world")
         self.assertEqual(Notepad.objects.get(basicstr="linuxworld").sharestr, "Abckdd12")
 
-
-
-
-
-
-
-

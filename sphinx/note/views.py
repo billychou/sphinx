@@ -16,6 +16,7 @@ def index(request):
     #实现数据库里面保存把生成的字符串保存 
     Notepad.create_a_object(bastr, shstr)
     return redirect('/%s' %bastr)
+    #return render(request, 'noteprocess.html')
 
 def noteprocess(request, basic):
     """
