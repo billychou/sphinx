@@ -24,5 +24,3 @@ class Notepad(models.Model):
     @classmethod
     def get_object_by_sharestr(cls, shstr):
         return cls.objects.get(sharestr=shstr)
-    
-    

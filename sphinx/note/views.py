@@ -5,7 +5,6 @@ from note.models import Notepad
 from note.forms import NotepadForm
 from note.utils import generatestr
 
-
 def index(request):
     """  Define the index request.      
         当没有输入内容的时候，随即生成的字符串url保存到数据库里面
