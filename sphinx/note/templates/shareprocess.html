@@ -3,7 +3,9 @@
 {% block main %}
     {% if mytext.text %}  <br />
         {% load markup %}
-        {{ mytext.text|markdown:"safe" }}
+      <p> 你输入的内容为：  
+	{{ mytext.text|markdown:"safe" }}
+      </p>
     {% else %}
         <p>Can't find the content!</p>
     {% endif %}
