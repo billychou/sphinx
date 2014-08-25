@@ -17,4 +17,3 @@ def generatestr():
     astr += ''.join( random.choice(seed_str) for i in xrange(lenstr) )
     tnum += ''.join( random.choice(seed_digits) for i in xrange(2) )
     return astr+tnum
-

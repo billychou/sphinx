@@ -28,8 +28,9 @@ def noteprocess(request, basic):
     mynotepad = Notepad.get_object_by_basicstr(basic)
     mynotepad.text = mytext 
     mynotepad.save()
-     
-    return render(request, 'noteprocess.html', {'mynotepad':mynotepad})
+    
+    all_obj = Notepad.get_all_objects() 
+    return render(request, 'noteprocess.html', {'mynotepad':mynotepad, 'all_obj':all_obj})
 
 def shareprocess(request, share):
     """

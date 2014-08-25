@@ -20,14 +20,39 @@
 
 {% block main %}
     <h2>可以记录你的私密小分享呀？</h2>
-    <p>Please input your content!The content is saved automation.
-    </p>
+    <p>Please input your content!The content is saved automation.</p>
     <form id="mform" method="POST" name="textform">
         <textarea id="target" type="text" name="myform" style="width:100%;height:30em">
 	</textarea>  
         <!--这个地方加name属性，是为后台获取数据使用的--> 
         {%csrf_token%}    
 
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+              <th>ID</th> 
+              <th>basicstr</th> 
+              <th>sharestr</th> 
+              <th>text</th> 
+              <th>pub_time</th> 
+        </tr>
+        </thead>
+
+        <tbody>
+            {% for obj in all_obj%}
+                <tr>
+                       <td>{{obj.id}}</td>
+                       <td>{{obj.basicstr}}</td>
+                       <td>{{obj.sharestr}}</td>
+                       <td>{{obj.text}}</td>
+                       <td>{{obj.pub_time}}</td>
+                       <td>{{obj.mod_time}}</td>
+                         
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
     <a href="/share/{{mynotepad.sharestr}}">
         <button type="text" class="btn btn-success">分享</button>
     </a>

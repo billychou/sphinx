@@ -11,7 +11,7 @@ class Notepad(models.Model):
    
     def __unicode__(self):
         return self.basicstr
-    
+        
     @classmethod
     def create_a_object(cls, bastr, shstr):
         t1 = cls(basicstr=bastr, sharestr=shstr, text="")
@@ -24,3 +24,7 @@ class Notepad(models.Model):
     @classmethod
     def get_object_by_sharestr(cls, shstr):
         return cls.objects.get(sharestr=shstr)
+
+    @classmethod
+    def get_all_objects(cls):
+        return cls.objects.all()
